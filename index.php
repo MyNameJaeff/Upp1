@@ -17,19 +17,9 @@
     </div>
     <div class="box">
         <?php
-        for($i = 1; $i <= 3; $i++){
-            switch($i){
-                case 1:
-                    allTable(5);
-                    break;
-                case 2:
-                    allTable(10);
-                    break;
-                case 3:
-                    allTable(15);
-                    break;
-            }
-        }
+        allTable(5);
+        allTable(10);
+        allTable(15);
         ?>
     </div>
     <div class="box2">
