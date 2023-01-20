@@ -9,31 +9,44 @@
     <title>Uppgift 1</title>
 </head>
 <body>
+    <div class="InputForm">
+        <form name="form" action="" method="post">
+            <input type="number" id="numberInput" name="numberInput">
+            
+        </form>
+    </div>
     <div class="box">
         <?php
         for($i = 1; $i <= 3; $i++){
             switch($i){
                 case 1:
-                    echo('<table class="table1 table table-striped table-hover">');
-                    $number = 5;
+                    allTable(5);
                     break;
                 case 2:
-                    echo('<table class="table table-striped table-hover">');
-                    $number = 10;
+                    allTable(10);
                     break;
                 case 3:
-                    echo('<table class="table table-striped table-hover">');
-                    $number = 15;
+                    allTable(15);
                     break;
             }
-            for($multiply = 1; $multiply <= 10; $multiply++){
-                echo("<tr>
-                        <td> $number X $multiply </td> <td> = </td> <td>" . $number*$multiply . "</td>
-                    </tr>");
-            }
-            echo("</table>");
         }
         ?>
+    </div>
+    <div class="box2">
+    <?php
+    if($_POST['numberInput']){
+        allTable($_POST['numberInput']);
+    }
+    function allTable($numberInput){
+        echo('<table class="table table-striped table-hover">');
+        for($multiply = 1; $multiply <= 10; $multiply++){
+            echo("<tr>
+                    <td> $numberInput X $multiply </td> <td> = </td> <td>" . $numberInput*$multiply . "</td>
+                </tr>");
+        }
+        echo("</table>");
+    }
+    ?>
     </div>
 </body>
 </html>
